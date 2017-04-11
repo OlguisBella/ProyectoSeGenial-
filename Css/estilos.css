@@ -21,7 +21,6 @@ font-family: "AlegreyaSans-Light" ;
 font-family:"AlegreyaSans-Thin";
 font-style: normal;
 font-weight: normal;
-
 }
 
 
@@ -36,6 +35,7 @@ background-size: cover;
 background-repeat: no-repeat;
 background-position: fixed; 
 }
+
 
 .ContenedorPrincipal{
     width:100%;
@@ -1052,6 +1052,12 @@ font-size:1.5em;
 font-family:font96876; /*AlegreyaSans-Bold;*/
 }
 
+.contenidoRedColab ul{
+    position: relative;
+    top:7em;
+}
+
+
 
 img.giro {    
 width:100%;
@@ -1362,7 +1368,7 @@ margin: 0.5em;
 position: relative;
 top:2em;
 width: 100%;
-height:75em;
+height:80em;
 }
      
 
@@ -1419,7 +1425,10 @@ position: relative;
 top:3em;
 }
 
-
+.contenidoContacto p{
+width:16em;
+}
+    
     
 .contacto{
 position: relative;
@@ -1442,7 +1451,7 @@ font-size:1em;
 }
 
 .btnEnviar{
-top:42em;
+top:41em;
 left:13em;
 }
 
@@ -1472,9 +1481,7 @@ height: 22em;
    position: relative;
    top:1em;
    width:17em;
-}
-  
-    
+}    
     
 /*Fin contacto*/
     
@@ -1484,7 +1491,7 @@ height: 22em;
     
     
 .contenedorRedColab{
-    height:125em;    
+ height:125em;    
 } 
     
 .contenidoRedColab{ 
@@ -1495,8 +1502,9 @@ height:35em;
 }   
     
 .desColb{
-top:17em;  
-left:2.7em;
+top:16em;
+left:0.5;
+font-size:1.2em;
 }
     
 
@@ -1507,39 +1515,38 @@ left:3em;
  }
 
 .contenidoRedColab h3{
-  left:4.5em;
+  left:2em;
   top:9em;    
 }
  
 
   
 .fonoRedCol{
-  top:26em;
-  left:3.5em;
+  top:24.7em;
+  left:1em;
 }
     
 .fonoNum{
 position:relative;
-top:6em;
-left:5em;
+top:9.5em;
+left:2.6em;
 }   
     
 .correoRedCol{
-top:28.5em;
-left:3.5em;
+top:27.3em;
+left:1em;
 }
    
 .mailRedCol{
-top:29.3em;
- left:5.5em;       
+top:28em;
+ left:3em;       
 }
 
 .webRedCol{
-top:31.3em;
- left:5.5em;       
+top:30.5em;
+left:3em;       
 }    
-    
-    
+  
      
 
 /*Eventos*/
@@ -1573,10 +1580,10 @@ height:75em;
 
 .contenidoEventos img{
 position:absolute;
-top:45em;
-left:2em;
-width:25em;
-height: 25em;
+top:47em;
+left:1.1em;
+width:23em;
+height: 23em;
 
 }
        
@@ -1613,10 +1620,7 @@ height: 25em;
 .contenidoGaleria{
     position: relative;
     left:0em;       
-} 
-    
-    
-    
+}   
     
 }
 
@@ -1645,7 +1649,7 @@ height: 25em;
 
   /* For tablets: */
 
-/*@media only screen and (min-width: 600px) {
+ /*@media only screen and (max-width:799px) {
   
     .col-m-1 {width: 8.33%;}
     .col-m-2 {width: 16.66%;}
