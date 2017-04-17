@@ -13,7 +13,8 @@ font-family: sans-serif;
 -ms-text-size-adjust: 100%;
 }
 
-
+@line-height-base:        1.428571429; // 20/14
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 @font-face {
 font-family:"AlegreyaSans-Bold";
@@ -41,12 +42,13 @@ background-position: fixed;
     width:100%;
     max-width:100%;  
     overflow: hidden;
-    height: auto;
+    height:auto;
     margin:0 auto;
-    position: relative;
+    position:relative;
     content:"";
-    display:table; 
+    display:block;    
 }
+
 
 
 .menu-bar img{
@@ -60,6 +62,7 @@ background-position: fixed;
     height: auto;
 }
 
+
 .imagenPrincipal{   
     width:100%;
     height:600px;
@@ -67,6 +70,7 @@ background-position: fixed;
     max-height: 600px;
     overflow: hidden;  
 }
+
     
 header{
 width:100%;
@@ -158,7 +162,6 @@ height:1.7em;
 }
 
 
-
 button{
 float: right;
 position: relative;
@@ -195,7 +198,10 @@ position: relative;
 top:0em;
 }
 
+/*Fin del Slider*/
 
+
+/*Menú*/
 
 nav{
    position: absolute;
@@ -258,14 +264,17 @@ left:2.5em;
 z-index:14;
 }
 
+/*Fin del Menú*/
 
+
+/*Sección Descripción*/
 
 .descripcion{
     position:absolute;
     top:0em;    
     background:#ffff71;
     width: 100%;
-    height:auto;   
+    height:12em;   
 }
 
 .descripcion h1{
@@ -277,111 +286,30 @@ color:#535353;
 
 
 .descripcion p{
+    width:35em;   
     font-size:1.5em;
     font-family: font29500; /*AlegreyaSans-Light */
-    text-align: center;
-    margin-left:7em;
-    margin-right:7em;
-    color:#535353;
-}
-
-.RedColaboradores{
-   position: relative;
-   top:7em;
-   width:33.33%;
-   background-color:#df7d34;  
-   height:50em;
-   float: left;
-   z-index: 1;
-}
-
-img.colabEjes{
-    position: relative;    
-    width:75%;
-    opacity: 0.8;
-    border: 10px solid #eee;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.1)));     
-}
- 
-img.colabEjes:hover {   
-   opacity: 1;
-    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.4)));
-    -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
-    -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
-    box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
-}
-
-
-.RedColaboradores h1{
-   font-size:1.7em;
-   font-family:font96876; /*AlegreyaSans-Bold;*/
-    text-align: center; 
-    color:#5b5a5a;   
-}
-
-
-.RedColaboradores p{
-    font-size:1.2em;
-    font-family: font29500; /*AlegreyaSans-Light */
-    text-align:center;    
-    color:#ffffff;
-    margin: 1em;
-    width:29em;
-    height:25em;
-    position: relative;
-    left:3.7em;
-}
-
-
-
-.button {    
-    border: none; 
-    padding: 15px 32px;
     text-align: center;   
-    display: inline-block;
-    font-size: 18px;
-    font-family:font29505; /*AlegreyaSans-Thin */
-    margin: 4px 2px;
-    cursor: pointer;  
-    margin-left: 5em;
-    margin-right: 5em;
+    color:#535353;
+    margin-left:13em;
+    margin-right:13em;
 }
 
+/*Fin sección descripción*/
 
-.buttonRedes {
-position:absolute;
-top:30em;
-left:10em;
-right:9em;
-background-color: transparent;    
-border: 2px solid rgb(198,159,121);  
-border-radius: 10px;    
-z-index: 2;
-}
 
-.buttonRedes a:hover{
-    color:yellow;
-    text-decoration: none;
-}
-
-.buttonRedes a{
-    color:white;
-}
-
+/*Sección potencial*/
 
 .linksPotencial{
 position: relative;
-top:3em;
+top:0;
 width:100%;
 height:47em;
 }
 
 .linksPotencial .row{
 position:relative;
-top:15em;
+top:10em;
 width:100%;
 }
 
@@ -404,7 +332,7 @@ margin-top: 2px;
     font-family:font96876; /*AlegreyaSans-Bold;*/
     text-align: center;   
     position: relative;
-    top:4em;
+    top:2em;
     color:#535353;
 }
 
@@ -413,7 +341,6 @@ margin-top: 2px;
     color:#ffff71;
     text-decoration: none;
 }
-
 
 
 .linkEstilo a{
@@ -475,34 +402,20 @@ margin-top: 2px;
     border-radius: 10px;    
 }
 
+/* Fin Sección potencial*/
 
-.video-responsive {
-position: relative;
-top:0em;
-padding-bottom: 56.25%; /* 16/9 ratio */
-padding-top: 30em; /* IE6 workaround*/   
-}
- 
-.video-responsive iframe,
-.video-responsive object,
-.video-responsive embed {
-position: absolute;
-top:2em;
-left:0em;
-width:100%;
-height:50%;
-}
 
+/* Sección Eventos */
 
 .eventosCalendar {   
-    position: absolute;
-    top:218em;
+    position:absolute;
+    top:105em;
     background-color:#465f84;
     color: #cfd419;
     text-align: left;
     float: left;    
     width: 100%;   
-    height:50%;
+    height:15%;
 }
 
 .eventosCalendar h1{  
@@ -510,18 +423,15 @@ height:50%;
     top:1.3em;
     text-align: center;    
     font-size:2.5em;  
-    font-family:font29500; /*AlegreyaSans-Light;*/
-    color: white;   
+    font-family:font96876; /*AlegreyaSans-Bold;*/
+    color:white;   
 } 
 
 
 .evento{
     position: relative;
-    top:5em;
-    width:25em;
-    height:25em;
+    top:5em;  
 }
-
 
 .evento h2{ 
     margin: auto;
@@ -549,7 +459,7 @@ height:50%;
     position: absolute;
     left:3.5em;
     top:4.5em;  
-     margin: auto;
+    margin: auto;
 }
 
 .evento p{
@@ -565,6 +475,19 @@ height:50%;
     margin: auto;    
 }
 
+.button {    
+    border: none;     
+    padding: 15px 32px;
+    text-align: center;   
+    display: inline-block;
+    font-size: 18px;
+    font-family:font29505; /*AlegreyaSans-Thin */
+    margin: 4px 2px;
+    cursor: pointer;  
+    margin-left: 5em;
+    margin-right: 5em;  
+}
+
 
 .buttonEventos {
    background-color: transparent;  
@@ -572,7 +495,7 @@ height:50%;
     border-radius: 10px; 
     position: relative;
     top:12em;
-    left:-5.5em;
+    left:-5.5em;    
 }
 
 .buttonEventos a:hover{
@@ -584,22 +507,127 @@ height:50%;
     color: white;
 }
 
-footer{  
+/* Fin Sección Eventos*/
+
+
+
+/*Sección Colaboradores*/
+
+.RedColaboradores{
+   position:relative;
+   top:30em;
+   width:33.33%;
+   background-color:#df7d34;  
+   height:52.5em;
+   float: left;
+   z-index: 1;
+}
+
+.RedColaboradores img{
+    position: relative; 
+    top: 5em;
+    width:75%; 
+}
+
+
+.RedColaboradores h1{
+   position: relative;
+   top:4em;
+   font-size:1.7em;
+   font-family:font96876; /*AlegreyaSans-Bold;*/
+   text-align: center; 
+   color:#535353;   
+}
+
+
+.RedColaboradores p{
     position: relative;
-    top:0.2em;
+    top:6em;
+    font-size:1.2em;
+    font-family: font29500; /*AlegreyaSans-Light */
+    text-align:center;    
+    color:#ffffff;
+    margin: 1em;
+    width:29em;
+    height:25em;  
+    left:3.7em;
+}
+
+
+.buttonRedes {
+position:absolute;
+top:33em;
+left:10em;
+right:9em;
+background-color: transparent;    
+border: 2px solid rgb(198,159,121);  
+border-radius: 10px;    
+z-index: 2;
+}
+
+.buttonRedes a:hover{
+    color:yellow;
+    text-decoration: none;
+}
+
+.buttonRedes a{
+    color:white;
+}
+
+/*Fin Sección Colaboradores*/
+
+
+/*Sección Video*/
+
+.video-responsive {
+position: relative;
+top:28em;
+padding-bottom: 56.25%; /* 16/9 ratio */
+padding-top: 30em; /* IE6 workaround*/   
+}
+ 
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+position: absolute;
+top:2em;
+left:0em;
+width:100%;
+height:50%;
+}  
+
+/*Fin Sección Eventos*/
+
+/*Sección Pie*/
+
+footer{  
     width:100%;
-    height:12.5em;    
+    height:12em;    
     color: white;
     background-color:#898a8a;   
-    clear:both;
     font-size:1em;   
     font-family:font29500; /*AlegreyaSans-Light;*/  
     text-align: center;    
 }
 
+
+.pie{
+  position:absolute;
+    top:236.5em;   
+    width:100%;
+    height:12em;    
+    color: white;
+    background-color:#898a8a;   
+    font-size:1em;   
+    font-family:font29500; /*AlegreyaSans-Light;*/  
+    text-align: center;   
+    z-index: 100;  
+}
+
+
 footer p{
-position: relative;
-left:0em;
+position:absolute;
+left:15em;
 top:2em;
 }
 
@@ -608,19 +636,19 @@ footer img{
     right:10em;
     top:2.5em;
     width:7em;
-    height:7em;
+    height:7em;    
 }
 
 
 .pull-right{
 font-size:1.5em;
 font-family: font96876; 
-position: relative;
-top: 0em;
+position:absolute;
+top:5em;
+right:-45em;
 }
 
 .pull-right a{
-left: 0em;
 width: 5em;
 height: auto;
 color:#ffff71;
@@ -631,6 +659,9 @@ text-decoration: none;
 color:#555;
 }
 
+/*Fin page home*/
+
+
 
 /*Nosotros*/
 
@@ -639,7 +670,7 @@ position: relative;
 left:0em;
 width:50%;
 top:5em;
-height:50em;
+height:40em;
 }
 
 
@@ -683,24 +714,15 @@ color:#ffff71;
 text-decoration: none;
 }
 
-
-.contacto{
-font-family:font96876; /*AlegreyaSans-Bold;*/
-position: relative;
-top:1em;
-left:5em;
-}
-
-.contenidoContacto {
-position: relative;
-left:3em;
-height:17em;
+.contenidoContacto .datosContact{
+position:relative;
+left:4.5em; 
 }
 
 .contenidoContacto img{
 position: relative;
 top:3.7em;
-left:0;
+left:3em;
 width:1.5em;
 height:1.2em;
 margin: 0;
@@ -718,7 +740,7 @@ margin: 0;
 .contenidoContacto p{
 position: relative;
 top:2em;
-left:2em;
+left:2.5em;
 font-family:font29500;  /*AlegreyaSans-Light;*/
 font-size:1.2em;    
 }
@@ -748,41 +770,45 @@ left:3.4em;
 
 .contCont{
 position: relative;
+font-size: 1.2em;
 font-family:font29500;  /*AlegreyaSans-Light;*/
 top:7em;
-left:15em;
-width:20em;
-height: 5em;
+left:3.5em;
+width:50%;
+height:2.5em;
+margin: 0;
+
 }
 
 
-.contCont label{
-position: absolute;
-right:15em;
-width:20em;
-height: 5em;
+.contCont .form-group label{
+position:absolute; 
+left:0em;
 }
+
+.contCont input{
+position:absolute; 
+left:6em;
+width:22em;
+height:2.5em;   
+}
+
 
 .btnEnviar{
 position: absolute;
-top:40em;
-left:20.5em;
+top:111em;
+left:16.5em;
 }
 
 
-.msjCont{
-position: absolute;
+.contCont textarea{
+position:absolute;
 font-family:font29500;  /*AlegreyaSans-Light;*/
-top:31em;
-left:15em;
-width:20em;
+top:0em;
+left:6em;
+width:22em;
 }
 
-.msjCont label{
-position: absolute;
-top:0em;
-right:31.5em;
-}
 
 .contenedorContac h3{
 position: relative;
@@ -808,38 +834,24 @@ height:115em;
 width:55%;
 position: absolute;
 left:11em;
-top:122em;
-
-}
-
-.mapa img{
-width: 100%;
-position: relative;
-top:2em;
-}
-
-.contCont input{
-position:relative;
-top: 0;
+top:117em;
 }
 
 .mapa h3{
-position: relative;
+position: absolute;
 left: 0;
 top: 0;
 font-size:2em;
 font-family:font96876; /*AlegreyaSans-Bold;*/     
 }
 
+.mapa img{
+width: 100%;
+position: relative;
+top:7em;
+}
 
-/*.formulario iframe{
-position:relative;
-top:10em;  
-left:1em;
-width:65em;
-height:45em;    
-}*/
-
+/*Fin Contáctenos*/
 
 
 
@@ -944,7 +956,7 @@ text-decoration: none;
 
 .contenidoEventos{
 position: relative;
-height:45em;
+height:40em;
 top: 2em;
 clear: both;
 }
@@ -952,16 +964,16 @@ clear: both;
 .contenedorEventos{
 position: relative;
 top:3em;  
-height:150em;
+height:130em;
 } 
 
 
 .contenidoEventos img{
 position:absolute;
-top:2.7em;
-left:41em;
-width:75%;
-height:75%;
+top:8em;
+left:42em;
+width:50%;
+height:50%;
 float: right;
 }
 
@@ -973,6 +985,7 @@ font-family:font96876; /*AlegreyaSans-Bold;*/
 }
 
 .contenidoEventos h4{
+color:#3E5C98;
 font-size:1.2em;
 font-family:font96876; /*AlegreyaSans-Bold;*/ 
 }
@@ -983,21 +996,11 @@ text-align: left;
 font-family:font29500;  /*AlegreyaSans-Light;*/
 }
 
-img.efectEventos{    
-    opacity: 0.8;
-    border:7px solid #eee;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.1)));     
-}
- 
-img.efectEventos:hover {   
-   opacity: 1;
-    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.4)));
-    -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
-    -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
-    box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+.list-group-item.active
+{
+    color: #FFF;
+    background-color: #428BCA;
+    border-color: #428BCA;
 }
 
 .list-group-item a{
@@ -1010,11 +1013,13 @@ text-decoration: none;
 }
 
 .list-group-item b{
+color:#749C3C;
  font-family:font96876; /*AlegreyaSans-Bold;*/    
 }
 
 
-/*Eventos*/
+/*Fin de Eventos*/
+
 
 
 
@@ -1044,13 +1049,6 @@ height:37em;
    
 }
 
-.contenidoRedColab h3{
-position: absolute;
-top:11em;
-left:3em;
-font-size:1.5em;
-font-family:font96876; /*AlegreyaSans-Bold;*/
-}
 
 .contenidoRedColab ul{
     position: relative;
@@ -1190,9 +1188,8 @@ top:20em;
 }
     
 
-.descripcion{
-   position:relative;
-   top:0em;
+.descripcion{   
+   height:19em;
 }
  
 .descripcion h1{
@@ -1200,48 +1197,30 @@ font-size:4em;}
 
 
 .descripcion p{
-    font-size:1.5em;   
-    text-align: center;
-    margin-left:2em;
-    margin-right:2em;   
-}
-    
-.RedColaboradores{
-height:45em;
-position: relative;
-top:7em;
-}
-
-    
-.RedColaboradores p{   
-    width:14.5em;
-    height:20em;
     position: relative;
-    left:1.2em;
-    font-size:1.4em;
-}
-    
-    
-.buttonRedes{ 
-top:27em;
-left:3em;
-}
+    font-size:1.5em;  
+    width:15em;    
+    margin: 0;    
+    left:2em;
+}    
+
 
 .linksPotencial{
 position: relative;
-top:3em;
+top:1em;
 }
   
 .linksPotencial h1{
 position: relative;
-top:2.5em;
+top:0;
 font-size:2em;
 }
   
 
 .linksPotencial .row{
 position:relative;
-top:8em;
+top:3em;
+left: 0;
 }      
     
     
@@ -1249,7 +1228,7 @@ top:8em;
 width:12.5em;
 height:8em;
 position: relative;
-top:0.5em;
+top:0em;
 margin:1em;
 } 
     
@@ -1268,23 +1247,17 @@ top:0em;
 font-size:1.3em;        
 }
  
-.video-responsive{
-position:relative;
-top:15em;
-}  
-
+    
 .eventosCalendar{
 position: relative;
-top:0em;  
-height:100em;
-
-
+left: 0;
+top:7em;
+height:95em;
 }
   
 .evento{
-position:relative;
-width: 100%;
-top:2em;  
+left:0;
+top:1em;  
 height:30em; 
 }   
     
@@ -1296,51 +1269,111 @@ top:0.5em;
 .mesAnio{   
 font-size:1.7em;
 position: relative;
-top:1em;
-left:0.5em; 
+top:2.3em;
+left:0.4em; 
 }
 
 .evento h4{    
-font-size:2em;
+font-size:1.5em;
+left:3.5em;
+top:5em; 
+}
+
+.evento h2{
 position: absolute;
-left:2.7em;
-top:2.9em; 
+top:0.3em;
 }
 
 .evento p{  
 font-size:1.5em;
-width:13em;
+width:12.7em;
 height:30em;
 position: absolute;
 left:3.6em;
-top:6.5em;   
+top:8em;   
 }
 
 .buttonEventos {   
 position: relative;
 left:-1em;
-top:14em;
+top:15em;
 }
-   
+    
+    
+.RedColaboradores{
+height:53em;
+position:absolute;
+top:7em;
+width:25%;
+}
+
+.RedColaboradores img{
+position:absolute;
+left:0;
+width:100%;
+}   
+    
+    
+ .RedColaboradores h1{
+position: absolute;
+top:14em;
+left:3em;
+}
+     
+.RedColaboradores p{   
+    width:15em;
+    height:20em;
+    position: relative;
+    left:0em;
+    font-size:1.4em;
+    top:20em;
+}
+    
+    
+.buttonRedes{ 
+top:33em;
+left:3em;
+}   
+    
+    
+.video-responsive{
+position:absolute;
+top:4.5em;
+}  
+
 footer{
 position: relative;
-top:0em;
-font-size:0.6em;
+top: 0;
+height:10em;
+}
+   
+.pie{
+top:370.2em;
+height:10em;
+}
+    
+footer p{
+font-size:0.7em;
 text-align: left;
+top:1.5em;
+left: 0.5em;
+width:29em;
 }
    
 footer img{
 position: absolute;
-top:4em;
-right:0em;
+top:3em;
+right:0.5em;
+width:5em;
+height:5em;
 }
     
     
 .pull-right {
 font-size:1.5em;
 position: absolute;
-top: 0em;
-margin: 0.5em;
+top:0.2em;
+left:14em;
 }
     
     
@@ -1368,7 +1401,7 @@ margin: 0.5em;
 position: relative;
 top:2em;
 width: 100%;
-height:80em;
+height:60em;
 }
      
 
@@ -1427,14 +1460,9 @@ top:3em;
 
 .contenidoContacto p{
 width:16em;
-}
+} 
     
-    
-.contacto{
-position: relative;
-left:5em;
-top:2em; 
-}
+
 
 .infoContact p{
 width:20em;  
@@ -1442,45 +1470,43 @@ width:20em;
 }
 
 .contCont{
-width:13em;
-height: 5em;
+width:5em;
+height:2.5em;
 }
+
+
 
 .contCont input{
 font-size:1em;
+width:13em;
+height:2em;
+left:4em;
 }
 
-.btnEnviar{
-top:41em;
-left:13em;
-}
-
-
-.msjCont{
-top:31em;
-left:15em;
-width:12.7em;
-}
-
-.msjCont label{
-right:24em;
+    
+.contCont textarea{
+width: 15.5em;
+left:5em;
 }
     
+.btnEnviar{
+top:103em;
+left:9.5em;
+}
+
 
 .mapa{
 position: relative;
-top:25em;
+top:20em;
 left:5em;
 margin: 0;
-width:22em;
-height: 22em;
 }
     
     
 .mapa img{
    position: relative;
-   top:1em;
-   width:17em;
+   left: 0em;
+   width:21em;
 }    
     
 /*Fin contacto*/
@@ -1505,8 +1531,7 @@ height:35em;
 top:16em;
 left:0.5;
 font-size:1.2em;
-}
-    
+}    
 
       
 .tituloRedColb{
@@ -1514,37 +1539,31 @@ position: relative;
 left:3em;        
  }
 
-.contenidoRedColab h3{
-  left:2em;
-  top:9em;    
-}
- 
 
-  
 .fonoRedCol{
-  top:24.7em;
-  left:1em;
+  top:24em;
+  left:2.7em;
 }
     
 .fonoNum{
 position:relative;
-top:9.5em;
-left:2.6em;
+top:7em;
+left:4.5em;
 }   
     
 .correoRedCol{
-top:27.3em;
-left:1em;
+top:26em;
+left:2.5em;
 }
    
 .mailRedCol{
-top:28em;
- left:3em;       
+top:27em;
+ left:5em;       
 }
 
 .webRedCol{
-top:30.5em;
-left:3em;       
+top:29em;
+left:5em;       
 }    
   
      
@@ -1570,29 +1589,31 @@ left:3em;
 
 .contenedorEventos{
   position: relative;       
-  top:1em; 
+  top:1em;   
+  height:210em;
 }
     
     
 .contenidoEventos{
-height:75em;
+height:65em;
 }
 
 .contenidoEventos img{
 position:absolute;
-top:47em;
-left:1.1em;
+top:39.5em;
+left:3em;
 width:23em;
 height: 23em;
-
 }
+    
+    
        
     
 /*Albumes*/
 
 
 .contenedorAlbum1{
-  height:290em; 
+  height:300em; 
 } 
     
     
